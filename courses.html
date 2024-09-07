@@ -90,6 +90,7 @@
          </div>
          <h3 class="title">General Literature</h3>
          <a href="playlist.html" class="inline-btn">open class</a>
+
       </div>
 
       <div class="box">
@@ -104,6 +105,7 @@
             <img src="images/background.jpeg" alt="">
             <span>materials</span>
          </div>
+         
          <h3 class="title">Poetry and Story Telling</h3>
          <a href="playlist.html" class="inline-btn">open class</a>
       </div>
@@ -222,14 +224,57 @@
       </div>
 
    </div>
-
-</section>
-
-
-
-
-
-
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Embed Multiple PDFs with Toggle</title>
+       <style>
+           .pdf-container {
+               display: none; /* Initially hide the PDFs */
+               margin-top: 20px;
+           }
+           iframe {
+               width: 100%;
+               height: 600px;
+               border: none;
+           }
+       </style>
+       <script>
+           function toggleVisibility() {
+               var pdfContainer = document.getElementById('pdf-container');
+               if (pdfContainer.style.display === 'none') {
+                   pdfContainer.style.display = 'block';
+               } else {
+                   pdfContainer.style.display = 'none';
+               }
+           }
+       </script>
+   </head>
+   <body>
+       <h1>GENERAL BOOKS LIBRARY</h1>
+       <a href="javascript:void(0);" onclick="toggleVisibility()">Open library</a>
+       
+       <div id="pdf-container" class="pdf-container">
+           <h2>Book 1</h2>
+           <iframe src="books/UBUSOJA.pdf">
+               This browser does not support PDFs. Please download the PDF to view it: <a href="pdfs/book1.pdf">Download Book 1</a>.
+           </iframe>
+   
+           <h2>Book 2</h2>
+           <iframe src="pdfs/book2.pdf">
+               This browser does not support PDFs. Please download the PDF to view it: <a href="pdfs/book2.pdf">Download Book 2</a>.
+           </iframe>
+   
+           <h2>Book 3</h2>
+           <iframe src="pdfs/book3.pdf">
+               This browser does not support PDFs. Please download the PDF to view it: <a href="pdfs/book3.pdf">Download Book 3</a>.
+           </iframe>
+       </div>
+   </body>
+   </html>
+   
 
 
 
