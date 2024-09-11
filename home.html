@@ -76,14 +76,13 @@
 
    <div class="box-container">
 
-
       <div class="box">
          <h3 class="title">top categories</h3>
          <div class="flex">
             <a href="#"><i class="fas fa-book"></i><span>Literature</span></a>
             <a href="#"><i class="fas fa-chart-simple"></i><span>business</span></a>
             <a href="#"><i class="fas fa-pen"></i><span>design</span></a>
-            <a href="#"><i class="fas fa-chart-line"></i><span>marketing</span></a>
+            <a href="#"><i class="fas fa-chart-line"></i><span>data analysis</span></a>
             <a href="#"><i class="fas fa-music"></i><span>music</span></a>
             <a href="#"><i class="fas fa-books"></i><span>poetry</span></a>
             <a href="#"><i class="fas fa-cog"></i><span>software</span></a>
@@ -91,6 +90,7 @@
          </div>
       </div>
 
+      
       <div class="box">
          <h3 class="title">Most Viewed topics</h3>
          <div class="flex">
@@ -98,14 +98,16 @@
             <a href="#"><i class="fab fa-css3"></i><span>CSS</span></a>
             <a href="#"><i class="fab fa-js"></i><span>javascript</span></a>
             <a href="#"><i class="fab fa-react"></i><span>react</span></a>
-            <a href="#"><i class="fab fa-book"></i><span>Story Telling</span></a>
-            <a href="#"><i class="fab fa-bootstrap"></i><span>general Agriculture</span></a>
+            <a href="#"><i class="fab fa-man"></i><span>Story Telling</span></a>
+            <a href="#"><i class="fab fa-tree"></i><span>General Agriculture</span></a>
          </div>
       </div>
 
       <div class="box">
-         <h3 class="title">become a Practical tutor</h3>
-         <p class="tutor">do you want your skills to develop practically?</p>
+         <h3 class="title">OUR Products and Services</h3>
+         <p class="tutor">We Have Exciting Deals For You!</p>
+         <a href="adverts.html" class="inline-btn">Check Them Out</a>
+         <a href="contact.html" class="inline-btn">Contact Us</a>
       </div>
 
    </div>
@@ -124,7 +126,7 @@
          <div class="tutor">
             <img src="images/official logo.jpg" alt="">
             <div class="info">
-               <h3>bright</h3>
+               <h3>Bright</h3>
                <span>21-10-2023</span>
             </div>
          </div>
@@ -133,14 +135,14 @@
             <span>materials</span>
          </div>
          <h3 class="title">General Literature</h3>
-         <a href="playlist.html" class="inline-btn">open class</a>
+         <a href="books/Rich-Dad-Poor-Dad.pdf" class="inline-btn">open class</a>
       </div>
 
       <div class="box">
          <div class="tutor">
             <img src="images/official logo.jpg" alt="">
             <div class="info">
-               <h3>bright</h3>
+               <h3>Bright</h3>
                <span>21-10-2023</span>
             </div>
          </div>
@@ -149,7 +151,7 @@
             <span>materials</span>
          </div>
          <h3 class="title">Poetry and Story Telling</h3>
-         <a href="playlist.html" class="inline-btn">open class</a>
+         <a href="chanda b/poetry.pdf" class="inline-btn">open class</a>
       </div>
 
       <div class="box">
@@ -162,10 +164,10 @@
          </div>
          <div class="thumb">
             <img src="images/cyber security.jpeg" alt="">
-            <span>materials</span>
+            <span> materials</span>
          </div>
          <h3 class="title">Cyber Security</h3>
-         <a href="playlist.html" class="inline-btn">open class</a>
+         <a href="chanda b/cyber security pdf.pdf" class="inline-btn">open class</a>
       </div>
 
       <div class="box">
@@ -181,7 +183,7 @@
             <span>materials</span>
          </div>
          <h3 class="title">Web desiging</h3>
-         <a href="playlist.html" class="inline-btn">open class</a>
+         <a href="chanda b/Web-Design-Lecture-Notes.pdf" class="inline-btn">open class</a>
       </div>
 
       <div class="box">
@@ -193,11 +195,11 @@
             </div>
          </div>
          <div class="thumb">
-            <img src="images/cartoon d.jpeg" alt="">
+            <img src="images/cartoon design.jpeg" alt="">
             <span>materials</span>
          </div>
          <h3 class="title">Cartoon Designing</h3>
-         <a href="playlist.html" class="inline-btn">open class</a>
+         <a href="chanda b/Cartoon designing pdf.pdf" class="inline-btn">open class</a>
       </div>
 
       <div class="box">
@@ -213,7 +215,7 @@
             <span>materials</span>
          </div>
          <h3 class="title">Data Analysis</h3>
-         <a href="playlist.html" class="inline-btn">open class</a>
+         <a href="chanda b/Data analysis pdf.pdf" class="inline-btn">open class</a>
       </div>
 
    </div>
@@ -224,7 +226,88 @@
 
 </section>
 
+</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embed Multiple PDFs with Toggle</title>
+    <style>
+        .pdf-container {
+            display: none; /* Initially hide the PDFs */
+            margin-top: 20px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+    </style>
+    <script>
+        function toggleVisibility() {
+            var pdfContainer = document.getElementById('pdf-container');
+            if (pdfContainer.style.display === 'none') {
+                pdfContainer.style.display = 'block';
+            } else {
+                pdfContainer.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>GENERAL BOOKS LIBRARY</h1>
+    <a href="javascript:void(0);" onclick="toggleVisibility()">Open library</a>
+    
+    <div id="pdf-container" class="pdf-container">
 
+        <h2>Books of Success</h2>
+        <iframe src="books/Rich-Dad-Poor-Dad.pdf">
+            This browser does not support PDFs. Please download the PDF to view it: <a href="books/Rich-Dad-Poor-Dad.pdf">Download Book 2</a>.
+        </iframe>
+        <iframe src="books/Richest man in Babylon pdf.pdf">
+         This browser does not support PDFs. Please download the PDF to view it: <a href="books/Richest man in Babylon pdf.pdf">Download Book 2</a>.
+     </iframe>
+     <iframe src="books/The art of War pdf.pdf">
+      This browser does not support PDFs. Please download the PDF to view it: <a href="books/The art of War pdf.pdf">Download Book 2</a>.
+  </iframe>
+  <iframe src="books/Think-and-Grow-Rich-PDF.pdf">
+   This browser does not support PDFs. Please download the PDF to view it: <a href="books/Think-and-Grow-Rich-PDF.pdf">Download Book 2</a>.
+</iframe>
+
+        <h2>Christian Books</h2>
+        <iframe src="books/The Story Of Redemption pdf.pdf">
+            This browser does not support PDFs. Please download the PDF to view it: <a href="books/The Story Of Redemption pdf.pdf">Download Book 3</a>.
+        </iframe>
+        <iframe src="books/Patrarchs and Prophets pdf.pdf">
+         This browser does not support PDFs. Please download the PDF to view it: <a href="books/Patrarchs and Prophets pdf.pdf">Download Book 2</a>.
+         <iframe src="books/Prophets and Kings pdf.pdf"></iframe>
+            This browser does not support PDFs. Please download the PDF to view it: <a href="books/Prophets and Kings pdf.pdf">Download Book 2</a>.
+        </iframe>
+        <iframe src="books/Last Day Events pdf.pdf">
+            This browser does not support PDFs. Please download the PDF to view it: <a href="books/Last Day Events pdf.pdf">Download Book 2</a>.
+        </iframe>
+        <iframe src="books/Desire of Ages pdf.pdf">
+            This browser does not support PDFs. Please download the PDF to view it: <a href="books/Desire of Ages pdf.pdf">Download Book 2</a>.
+        </iframe>
+        <iframe src="books/The Acts of the Apostles pdf.pdf">
+            This browser does not support PDFs. Please download the PDF to view it: <a href="books/The Acts of the Apostles pdf.pdf">Download Book 2</a>.
+        </iframe>
+        <iframe src="books/Adventist Home pdf.pdf">
+            This browser does not support PDFs. Please download the PDF to view it: <a href="books/Adventist Home pdf.pdf">Download Book 2</a>.
+        </iframe>
+        <iframe src="books/Great Contraversy-Pdf.pdf">
+            This browser does not support PDFs. Please download the PDF to view it: <a href="books/Great Contraversy-Pdf.pdf">Download Book 2</a>.
+        </iframe>
+        
+        <h2>Books of Poetry</h2>
+        <iframe src="books/shakespeares-works_PDF_FolgerShakespeare.zip">
+            This browser does not support PDFs. Please download the PDF to view it: <a href="books/Rich-Dad-Poor-Dad.pdf">Download Book 2</a>.
+        </iframe>
+     </iframe>
+    </div>
+</body>
+</html>
 
 
 
@@ -240,7 +323,7 @@
 
 <footer class="footer">
 
-   &copy; copyright @ 2024 by <span>Chanda Bright</span> | all rights reserved!
+   &copy; copyright @ 2024 by <span>Chanda Agri-Tech</span> | all rights reserved!
 
 </footer>
 
