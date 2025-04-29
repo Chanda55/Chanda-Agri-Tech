@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Search Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+    }
+
+    .search-form {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .search-form input {
+      flex: 1;
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .search-form button {
+      padding: 0.5rem 1rem;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .results {
+      list-style: none;
+      padding: 0;
+    }
+
+    .results li {
+      padding: 0.5rem;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .results a {
+      text-decoration: none;
+      color: #007BFF;
+    }
+
+    .results a:hover {
+      text-decoration: underline;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Search Courses, Quizzes, Books</h2>
+
+  <form class="search-form" onsubmit="return false;">
+    <input type="text" id="searchInput" placeholder="Enter keyword..." onkeyup="searchItems()"/>
+    <button type="button" onclick="searchItems()"><i class="fas fa-search"></i></button>
+  </form>
+
+  <ul class="results" id="resultsList">
+    <li><a href="quizzes/agriculture.html">General Agriculture Quiz</a></li>
+    <li><a href="quizzes/computerscience.html">Computer Science Quiz</a></li>
+    <li><a href="lessons/literature.html">Introduction to Literature</a></li>
+    <li><a href="lessons/poetry-storytelling.html">Poetry and Storytelling</a></li>
+    <li><a href="lessons/web-design.html">Web Design Course</a></li>
+    <li><a href="lessons/cyber-forensics.html">Cyber Forensics Module</a></li>
+    <li><a href="books/microsoft-office.html">Microsoft Office Guide</a></li>
+    <li><a href="tutorials/data-analytics.html">Data Analytics Tutorial</a></li>
+    <li><a href="books/graphic-design.html">Graphic Design Book</a></li>
+    <li><a href="notes/agriculture.html">General Agriculture Notes</a></li>
+  </ul>
+
+  <script>
+    function searchItems() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const items = document.querySelectorAll("#resultsList li");
+
+      items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        item.classList.toggle("hidden", !text.includes(input));
+      });
+    }
+  </script>
+
+</body>
+</html>
