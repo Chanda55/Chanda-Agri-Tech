@@ -80,7 +80,6 @@
          </div>
          <div class="thumb">
             <img src="images/lit logo.jpg" alt="Course Image">
-            <span>Materials</span>
          </div>
          <h3 class="title">General Literature</h3>
          <a href="playlist.html" class="inline-btn">Open Class</a>
@@ -93,47 +92,166 @@
          </div>
          <div class="thumb">
             <img src="images/sitoli.jpg" alt="Course Image">
-            <span>Materials</span>
          </div>
          <h3 class="title">Poetry and Story Telling</h3>
          <a href="playlist.html" class="inline-btn">Open Class</a>
       </div>
+      <div class="box">
+         <div class="tutor">
+            <img src="images/forensics.png" alt="">
+            <div class="info">
+            </div>
+         </div>
+         <div class="thumb">
+            <img src="images/forensics.png" alt="">
+         </div>
+         <h3 class="title">Cyber Forensics</h3>
+         <a href="playlist.html" class="inline-btn">open class</a>
+      </div>
 
-      <!-- Add more courses here similarly -->
+      <div class="box">
+         <div class="tutor">
+            <img src="images/dev web.jpg" alt="">
+            <div class="info">
+            </div>
+         </div>
+         <div class="thumb">
+            <img src="images/dev web.jpg" alt="">
+         </div>
+         <h3 class="title">Web Designing</h3>
+         <a href="playlist.html" class="inline-btn">open class</a>
+      </div>
 
+      <div class="box">
+         <div class="tutor">
+            <img src="images/cartoon design.jpeg" alt="">
+            <div class="info">
+            </div>
+         </div>
+         <div class="thumb">
+            <img src="images/cartoon design.jpeg" alt="">
+         </div>
+         <h3 class="title">Cartoon Designing</h3>
+         <a href="playlist.html" class="inline-btn">open class</a>
+      </div>
+
+      <div class="box">
+         <div class="tutor">
+            <img src="images/data anal.jpeg" alt="">
+            <div class="info">
+            </div>
+         </div>
+         <div class="thumb">
+            <img src="images/data anal.jpeg" alt="">
+         </div>
+         <h3 class="title">Data Analytics</h3>
+         <a href="playlist.html" class="inline-btn">open class</a>
+         
+      </div>
+
+      <div class="box">
+         <div class="tutor">
+            <img src="images/grap des.jpeg" alt="">
+            <div class="info">
+            </div>
+         </div>
+         <div class="thumb">
+            <img src="images/grap des.jpeg" alt="">
+         </div>
+         <h3 class="title">Graphic Designing</h3>
+         <a href="playlist.html" class="inline-btn">open class</a>
+         
+      </div>
+
+      <div class="box">
+         <div class="tutor">
+            <img src="images/m office logo.jpg" alt="">
+            <div class="info">
+            </div>
+         </div>
+         <div class="thumb">
+            <img src="images/m office logo.jpg" alt="">
+         </div>
+         <h3 class="title">Unlocking Microsoft Office</h3>
+         <a href="playlist.html" class="inline-btn">open class</a>
+      </div>
+
+      <div class="box">
+         <div class="tutor">
+            <img src="images/g agric.png" alt="">
+            <div class="info">>
+            </div>
+         </div>
+         <div class="thumb">
+            <img src="images/g agric.png" alt="">
+         </div>
+         <h3 class="title">General Agriculture</h3>
+         <a href="playlist.html" class="inline-btn">open class</a>
+      </div>
+
+
+   <div class="more-btn">
+      <a href="courses.html" class="inline-option-btn">view all courses</a>
    </div>
-</section>
 
-<!-- PDF Toggle Section -->
-<section>
-   <h1>General Books Library</h1>
-   <a href="javascript:void(0);" onclick="toggleVisibility()">Open Library</a>
-   
+</section>
+<section class="pdf-library">
+
+   <h1>GENERAL BOOKS LIBRARY</h1>
+   <a href="javascript:void(0);" onclick="toggleVisibility()">Open library</a>
+
    <div id="pdf-container" class="pdf-container">
       <h2>Books of Success</h2>
-      <iframe src="books/Rich-Dad-Poor-Dad.pdf">This browser does not support PDFs. Please download the PDF to view it: <a href="books/Rich-Dad-Poor-Dad.pdf">Download Book 1</a>.</iframe>
-      <!-- Add more PDFs here -->
+      <iframe src="books/Rich-Dad-Poor-Dad.pdf"></iframe>
+      <iframe src="books/Richest man in Babylon pdf.pdf"></iframe>
+      <iframe src="books/The art of War pdf.pdf"></iframe>
+      <iframe src="books/Think-and-Grow-Rich-PDF.pdf"></iframe>
+
+      <h2>Christian Books</h2>
+      <iframe src="books/The Story Of Redemption pdf.pdf"></iframe>
+      <iframe src="books/Patrarchs and Prophets pdf.pdf"></iframe>
+      <iframe src="books/Prophets and Kings pdf.pdf"></iframe>
+      <iframe src="books/Last Day Events pdf.pdf"></iframe>
+      <iframe src="books/Desire of Ages pdf.pdf"></iframe>
+      <iframe src="books/The Acts of the Apostles pdf.pdf"></iframe>
    </div>
+
 </section>
 
-<footer class="footer">
-   &copy; Copyright @ 2025 by <span>Chanda Agri-Tech</span> | All rights reserved!
-</footer>
-
-<!-- Custom JS File Link -->
-<script src="js/script.js"></script>
+<style>
+   .pdf-library {
+      margin: 40px;
+   }
+   .pdf-container {
+      display: none;
+      margin-top: 20px;
+   }
+   iframe {
+      width: 100%;
+      height: 600px;
+      margin-bottom: 20px;
+      border: none;
+   }
+</style>
 
 <script>
-   // Toggle PDF visibility
    function toggleVisibility() {
-       var pdfContainer = document.getElementById('pdf-container');
-       if (pdfContainer.style.display === 'none') {
-           pdfContainer.style.display = 'block';
-       } else {
-           pdfContainer.style.display = 'none';
-       }
+      var pdfContainer = document.getElementById('pdf-container');
+      pdfContainer.style.display = (pdfContainer.style.display === 'none') ? 'block' : 'none';
    }
 </script>
 
+
+
+<footer class="footer">
+
+   &copy; copyright @ 2025 by <span>Chanda Agri-Tech</span> | all rights reserved!
+
+</footer>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+   
 </body>
 </html>
