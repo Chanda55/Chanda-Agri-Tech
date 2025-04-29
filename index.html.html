@@ -245,48 +245,110 @@
 
 </section>
 
-<section class="pdf-library">
+</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embed Multiple PDFs with Toggle</title>
+    <style>
+        .pdf-container {
+            display: none; /* Initially hide the PDFs */
+            margin-top: 20px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+    </style>
+    <script>
+        function toggleVisibility() {
+            var pdfContainer = document.getElementById('pdf-container');
+            if (pdfContainer.style.display === 'none') {
+                pdfContainer.style.display = 'block';
+            } else {
+                pdfContainer.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>GENERAL BOOKS LIBRARY</h1>
+    <a href="javascript:void(0);" onclick="toggleVisibility()">Open library</a>
+    
+    <div id="pdf-container" class="pdf-container">
 
-   <h1>GENERAL BOOKS LIBRARY</h1>
-   <a href="javascript:void(0);" onclick="toggleVisibility()">Open library</a>
+        <h2>Books of Success</h2>
+        <iframe src="books/Rich-Dad-Poor-Dad.pdf">
+            This browser does not support PDFs. Please download the PDF to view it: <a href="books/Rich-Dad-Poor-Dad.pdf">Download Book 2</a>.
+        </iframe>
+        <iframe src="books/Richest man in Babylon pdf.pdf">
+         This browser does not support PDFs. Please download the PDF to view it: <a href="books/Richest man in Babylon pdf.pdf">Download Book 2</a>.
+     </iframe>
+     <iframe src="books/The art of War pdf.pdf">
+      This browser does not support PDFs. Please download the PDF to view it: <a href="books/The art of War pdf.pdf">Download Book 2</a>.
+  </iframe>
+  <iframe src="books/Think-and-Grow-Rich-PDF.pdf">
+   This browser does not support PDFs. Please download the PDF to view it: <a href="books/Think-and-Grow-Rich-PDF.pdf">Download Book 2</a>.
+</iframe>
 
-   <div id="pdf-container" class="pdf-container">
-      <h2>Books of Success</h2>
-      <iframe src="books/Rich-Dad-Poor-Dad.pdf"></iframe>
-      <iframe src="books/Richest man in Babylon pdf.pdf"></iframe>
-      <iframe src="books/The art of War pdf.pdf"></iframe>
-      <iframe src="books/Think-and-Grow-Rich-PDF.pdf"></iframe>
+        <h2>Christian Books</h2>
+        <iframe src="books/The Story Of Redemption pdf.pdf">
+            This browser does not support PDFs. Please download the PDF to view it: <a href="books/The Story Of Redemption pdf.pdf">Download Book 3</a>.
+        </iframe>
+        <iframe src="books/Patrarchs and Prophets pdf.pdf">
+         This browser does not support PDFs. Please download the PDF to view it: <a href="books/Patrarchs and Prophets pdf.pdf">Download Book 2</a>.
+         <iframe src="books/Prophets and Kings pdf.pdf"></iframe>
+            This browser does not support PDFs. Please download the PDF to view it: <a href="books/Prophets and Kings pdf.pdf">Download Book 2</a>.
+        </iframe>
+        <iframe src="books/Last Day Events pdf.pdf">
+            This browser does not support PDFs. Please download the PDF to view it: <a href="books/Last Day Events pdf.pdf">Download Book 2</a>.
+        </iframe>
+        <iframe src="books/Desire of Ages pdf.pdf">
+            This browser does not support PDFs. Please download the PDF to view it: <a href="books/Desire of Ages pdf.pdf">Download Book 2</a>.
+        </iframe>
+        <iframe src="books/The Acts of the Apostles pdf.pdf">
+            This browser does not support PDFs. Please download the PDF to view it: <a href="books/The Acts of the Apostles pdf.pdf">Download Book 2</a>.
+        </iframe>
+        <iframe src="books/Adventist Home pdf.pdf">
+            This browser does not support PDFs. Please download the PDF to view it: <a href="books/Adventist Home pdf.pdf">Download Book 2</a>.
+        </iframe>
+        <iframe src="books/Great Contraversy-Pdf.pdf">
+            This browser does not support PDFs. Please download the PDF to view it: <a href="books/Great Contraversy-Pdf.pdf">Download Book 2</a>.
+        </iframe>
+        
+        <h2>Books of Poetry</h2>
+        <iframe src="books/shakespeares-works_PDF_FolgerShakespeare.zip">
+            This browser does not support PDFs. Please download the PDF to view it: <a href="books/Rich-Dad-Poor-Dad.pdf">Download Book 2</a>.
+        </iframe>
+     </iframe>
+    </div>
+</body>
+</html>
 
-      <h2>Christian Books</h2>
-      <iframe src="books/The Story Of Redemption pdf.pdf"></iframe>
-      <iframe src="books/Patrarchs and Prophets pdf.pdf"></iframe>
-      <iframe src="books/Prophets and Kings pdf.pdf"></iframe>
-      <iframe src="books/Last Day Events pdf.pdf"></iframe>
-      <iframe src="books/Desire of Ages pdf.pdf"></iframe>
-      <iframe src="books/The Acts of the Apostles pdf.pdf"></iframe>
-   </div>
 
-</section>
 
-<style>
-   .pdf-library {
-      margin: 40px;
-   }
-   .pdf-container {
-      display: none;
-      margin-top: 20px;
-   }
-   iframe {
-      width: 100%;
-      height: 600px;
-      margin-bottom: 20px;
-      border: none;
-   }
-</style>
 
-<script>
-   function toggleVisibility() {
-      var pdfContainer = document.getElementById('pdf-container');
-      pdfContainer.style.display = (pdfContainer.style.display === 'none') ? 'block' : 'none';
-   }
-</script>
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+
+   &copy; copyright @ 2025 by <span>Chanda Agri-Tech</span> | all rights reserved!
+
+</footer>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+   
+</body>
+</html>
