@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ultimate Quiz</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       background: #f2f2f2;
+      margin: 0;
+      padding: 0;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      margin: 0;
     }
     .quiz-container {
       background: #fff;
@@ -20,7 +20,7 @@
       border-radius: 10px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.3);
       width: 90%;
-      max-width: 600px;
+      max-width: 700px;
     }
     .question {
       font-size: 24px;
@@ -42,106 +42,185 @@
       color: #fff;
     }
     .result {
-      font-size: 22px;
+      font-size: 20px;
+      margin-top: 15px;
+    }
+    #timer {
+      font-size: 18px;
+      color: #ff0000;
       font-weight: bold;
-      margin-top: 20px;
+      margin-bottom: 15px;
+    }
+    #categorySelection {
       text-align: center;
+    }
+    #categorySelection h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    #categorySelection button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      transition: 0.3s;
+    }
+    #categorySelection button:hover {
+      background-color: #0056b3;
+    }
+    .summary {
+      font-size: 18px;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
 
-<div class="quiz-container">
-  <div id="quiz">
-    <div class="question" id="question">Loading...</div>
+<div class="quiz-container" id="main">
+  <div id="categorySelection">
+    <h2>Select a Quiz Category</h2>
+    <button onclick="startCategory('Agriculture')">General Agriculture</button>
+    <button onclick="startCategory('CS')">Computer Science</button>
+    <button onclick="startCategory('Literature')">Literature</button>
+  </div>
+
+  <div id="quiz" style="display:none;">
+    <div id="timer">Time Left: <span id="timeLeft">15</span>s</div>
+    <div class="question" id="question">Question text</div>
     <div class="options" id="options"></div>
     <div class="result" id="result"></div>
   </div>
+
+  <div id="summary" class="summary"></div>
 </div>
 
+<audio id="correctSound" src="https://www.soundjay.com/buttons/sounds/button-4.mp3"></audio>
+<audio id="wrongSound" src="https://www.soundjay.com/buttons/sounds/button-10.mp3"></audio>
+
 <script>
-const quizData = [
-  // Literature
-  {question: "Who wrote 'Romeo and Juliet'?", options: ["Charles Dickens", "William Shakespeare", "Jane Austen", "Mark Twain"], answer: "William Shakespeare"},
-  {question: "Which novel begins with 'Call me Ishmael'?", options: ["Moby-Dick", "The Odyssey", "Dracula", "Pride and Prejudice"], answer: "Moby-Dick"},
-  {question: "Author of 'The Great Gatsby'?", options: ["Ernest Hemingway", "F. Scott Fitzgerald", "George Orwell", "Leo Tolstoy"], answer: "F. Scott Fitzgerald"},
-  {question: "What genre is '1984'?", options: ["Romance", "Fantasy", "Dystopian", "Historical"], answer: "Dystopian"},
-  {question: "Who wrote 'Pride and Prejudice'?", options: ["Jane Austen", "Emily Brontë", "Mary Shelley", "Virginia Woolf"], answer: "Jane Austen"},
-  {question: "Who wrote 'The Iliad'?", options: ["Plato", "Homer", "Socrates", "Aristotle"], answer: "Homer"},
-  {question: "What is the name of Sherlock Holmes' assistant?", options: ["Watson", "Wilson", "Warren", "Wellington"], answer: "Watson"},
-  {question: "The poem 'The Raven' was written by?", options: ["Walt Whitman", "Edgar Allan Poe", "Emily Dickinson", "Robert Frost"], answer: "Edgar Allan Poe"},
-  {question: "Who is the author of 'Animal Farm'?", options: ["J.K. Rowling", "George Orwell", "Stephen King", "Agatha Christie"], answer: "George Orwell"},
-  {question: "The play 'Hamlet' is by?", options: ["William Shakespeare", "Christopher Marlowe", "Ben Jonson", "John Milton"], answer: "William Shakespeare"},
+const allQuestions = {
+  Agriculture: [
+    {question: "Which gas is most essential for photosynthesis?", options: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"], answer: "Carbon Dioxide"},
+    {question: "What is the process of breeding plants for better traits called?", options: ["Grafting", "Hybridization", "Irrigation", "Cultivation"], answer: "Hybridization"},
+    {question: "Which crop is known as the 'king of cereals'?", options: ["Rice", "Maize", "Wheat", "Barley"], answer: "Wheat"},
+    {question: "The green pigment in plants is called?", options: ["Chlorophyll", "Hemoglobin", "Melanin", "Keratin"], answer: "Chlorophyll"},
+    {question: "What is Vermiculture?", options: ["Bee keeping", "Cultivation of worms", "Fish farming", "Mushroom farming"], answer: "Cultivation of worms"},
+    {question: "Which vitamin is rich in carrots?", options: ["Vitamin C", "Vitamin A", "Vitamin D", "Vitamin B12"], answer: "Vitamin A"},
+    {question: "Best time for sowing wheat in India?", options: ["March-April", "May-June", "October-November", "July-August"], answer: "October-November"},
+    {question: "Which part of the plant absorbs water?", options: ["Stem", "Leaves", "Roots", "Flowers"], answer: "Roots"},
+    {question: "Crop rotation helps in?", options: ["Increasing pests", "Soil fertility", "Water wastage", "Reducing yield"], answer: "Soil fertility"},
+    {question: "The major nutrient needed in large quantity for plants?", options: ["Nitrogen", "Zinc", "Iron", "Copper"], answer: "Nitrogen"}
+  ],
+  CS: [
+    {question: "What does CPU stand for?", options: ["Central Processing Unit", "Central Performance Unit", "Computer Processing Unit", "Central Program Unit"], answer: "Central Processing Unit"},
+    {question: "HTML stands for?", options: ["Hyper Trainer Marking Language", "Hyper Text Markup Language", "Hyper Tool Multi Language", "Hyperlink and Text Markup Language"], answer: "Hyper Text Markup Language"},
+    {question: "Who is known as the father of computers?", options: ["Alan Turing", "Charles Babbage", "Bill Gates", "Steve Jobs"], answer: "Charles Babbage"},
+    {question: "What is the symbol for OR in most programming languages?", options: ["&&", "||", "**", "%%"], answer: "||"},
+    {question: "Python was created by?", options: ["Guido van Rossum", "James Gosling", "Dennis Ritchie", "Bjarne Stroustrup"], answer: "Guido van Rossum"},
+    {question: "Which of these is NOT a programming language?", options: ["Python", "Java", "HTML", "Ruby"], answer: "HTML"},
+    {question: "Binary code uses which two digits?", options: ["1 and 2", "0 and 1", "0 and 9", "2 and 8"], answer: "0 and 1"},
+    {question: "What is the shortcut for 'copy' on most computers?", options: ["Ctrl + C", "Ctrl + V", "Ctrl + X", "Ctrl + Z"], answer: "Ctrl + C"},
+    {question: "What type of device is a printer?", options: ["Input", "Output", "Storage", "Processing"], answer: "Output"},
+    {question: "Linux is an example of?", options: ["Application Software", "Operating System", "Utility Software", "Programming Language"], answer: "Operating System"}
+  ],
+  Literature: [
+    {question: "Who wrote 'Romeo and Juliet'?", options: ["Charles Dickens", "William Shakespeare", "Jane Austen", "Mark Twain"], answer: "William Shakespeare"},
+    {question: "Which novel begins with 'Call me Ishmael'?", options: ["Moby-Dick", "The Odyssey", "Dracula", "Pride and Prejudice"], answer: "Moby-Dick"},
+    {question: "Author of 'The Great Gatsby'?", options: ["Ernest Hemingway", "F. Scott Fitzgerald", "George Orwell", "Leo Tolstoy"], answer: "F. Scott Fitzgerald"},
+    {question: "What genre is '1984'?", options: ["Romance", "Fantasy", "Dystopian", "Historical"], answer: "Dystopian"},
+    {question: "Who wrote 'Pride and Prejudice'?", options: ["Jane Austen", "Emily Brontë", "Mary Shelley", "Virginia Woolf"], answer: "Jane Austen"},
+    {question: "Who wrote 'The Iliad'?", options: ["Plato", "Homer", "Socrates", "Aristotle"], answer: "Homer"},
+    {question: "What is the name of Sherlock Holmes' assistant?", options: ["Watson", "Wilson", "Warren", "Wellington"], answer: "Watson"},
+    {question: "The poem 'The Raven' was written by?", options: ["Walt Whitman", "Edgar Allan Poe", "Emily Dickinson", "Robert Frost"], answer: "Edgar Allan Poe"},
+    {question: "Who is the author of 'Animal Farm'?", options: ["J.K. Rowling", "George Orwell", "Stephen King", "Agatha Christie"], answer: "George Orwell"},
+    {question: "The play 'Hamlet' is by?", options: ["William Shakespeare", "Christopher Marlowe", "Ben Jonson", "John Milton"], answer: "William Shakespeare"}
+  ]
+};
 
-  // Computer Science
-  {question: "What does CPU stand for?", options: ["Central Processing Unit", "Central Performance Unit", "Computer Processing Unit", "Central Program Unit"], answer: "Central Processing Unit"},
-  {question: "HTML stands for?", options: ["Hyper Trainer Marking Language", "Hyper Text Markup Language", "Hyper Tool Multi Language", "Hyperlink and Text Markup Language"], answer: "Hyper Text Markup Language"},
-  {question: "Who is known as the father of computers?", options: ["Alan Turing", "Charles Babbage", "Bill Gates", "Steve Jobs"], answer: "Charles Babbage"},
-  {question: "What is the symbol for OR in most programming languages?", options: ["&&", "||", "**", "%%"], answer: "||"},
-  {question: "Python was created by?", options: ["Guido van Rossum", "James Gosling", "Dennis Ritchie", "Bjarne Stroustrup"], answer: "Guido van Rossum"},
-  {question: "Which of these is NOT a programming language?", options: ["Python", "Java", "HTML", "Ruby"], answer: "HTML"},
-  {question: "Binary code uses which two digits?", options: ["1 and 2", "0 and 1", "0 and 9", "2 and 8"], answer: "0 and 1"},
-  {question: "What is the shortcut for 'copy' on most computers?", options: ["Ctrl + C", "Ctrl + V", "Ctrl + X", "Ctrl + Z"], answer: "Ctrl + C"},
-  {question: "What type of device is a printer?", options: ["Input", "Output", "Storage", "Processing"], answer: "Output"},
-  {question: "Linux is an example of?", options: ["Application Software", "Operating System", "Utility Software", "Programming Language"], answer: "Operating System"},
-
-  // Agriculture
-  {question: "Which gas is most essential for photosynthesis?", options: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"], answer: "Carbon Dioxide"},
-  {question: "What is the process of breeding plants for better traits called?", options: ["Grafting", "Hybridization", "Irrigation", "Cultivation"], answer: "Hybridization"},
-  {question: "Which crop is known as the 'king of cereals'?", options: ["Rice", "Maize", "Wheat", "Barley"], answer: "Wheat"},
-  {question: "The green pigment in plants is called?", options: ["Chlorophyll", "Hemoglobin", "Melanin", "Keratin"], answer: "Chlorophyll"},
-  {question: "What is Vermiculture?", options: ["Bee keeping", "Cultivation of worms", "Fish farming", "Mushroom farming"], answer: "Cultivation of worms"},
-  {question: "Which vitamin is rich in carrots?", options: ["Vitamin C", "Vitamin A", "Vitamin D", "Vitamin B12"], answer: "Vitamin A"},
-  {question: "Best time for sowing wheat in India?", options: ["March-April", "May-June", "October-November", "July-August"], answer: "October-November"},
-  {question: "Which part of the plant absorbs water?", options: ["Stem", "Leaves", "Roots", "Flowers"], answer: "Roots"},
-  {question: "Crop rotation helps in?", options: ["Increasing pests", "Soil fertility", "Water wastage", "Reducing yield"], answer: "Soil fertility"},
-  {question: "The major nutrient needed in large quantity for plants?", options: ["Nitrogen", "Zinc", "Iron", "Copper"], answer: "Nitrogen"}
-];
-
+let quizData = [];
 let currentQuestion = 0;
 let score = 0;
+let selectedCategory = '';
+let timer;
+let timeLeft = 15;
+let answerSummary = [];
+
+function startCategory(category) {
+  selectedCategory = category;
+  quizData = allQuestions[category];
+  document.getElementById("categorySelection").style.display = "none";
+  document.getElementById("quiz").style.display = "block";
+  loadQuestion();
+}
 
 function loadQuestion() {
-  const questionElement = document.getElementById("question");
-  const optionsElement = document.getElementById("options");
-  const resultElement = document.getElementById("result");
+  clearInterval(timer);
+  timeLeft = 15;
+  document.getElementById("timeLeft").textContent = timeLeft;
+  timer = setInterval(updateTimer, 1000);
 
-  resultElement.innerHTML = "";
+  const currentQuiz = quizData[currentQuestion];
+  document.getElementById("question").innerText = currentQuiz.question;
+  document.getElementById("options").innerHTML = "";
+  document.getElementById("result").innerText = "";
 
-  if (currentQuestion < quizData.length) {
-    const currentQuiz = quizData[currentQuestion];
-    questionElement.innerText = currentQuiz.question;
+  currentQuiz.options.forEach(option => {
+    const btn = document.createElement("button");
+    btn.textContent = option;
+    btn.onclick = () => selectAnswer(option);
+    document.getElementById("options").appendChild(btn);
+  });
+}
 
-    optionsElement.innerHTML = "";
-    currentQuiz.options.forEach(option => {
-      const button = document.createElement("button");
-      button.innerText = option;
-      button.onclick = () => {
-        if (option === currentQuiz.answer) {
-          score++;
-          resultElement.innerHTML = "<span style='color:green;'>Correct!</span>";
-        } else {
-          resultElement.innerHTML = "<span style='color:red;'>Wrong! Correct answer: " + currentQuiz.answer + "</span>";
-        }
-        currentQuestion++;
-        setTimeout(loadQuestion, 1000);
-      };
-      optionsElement.appendChild(button);
-    });
-  } else {
-    quizOver();
+function updateTimer() {
+  timeLeft--;
+  document.getElementById("timeLeft").textContent = timeLeft;
+  if (timeLeft === 0) {
+    clearInterval(timer);
+    showAnswer("Time's up!");
+    answerSummary.push({question: quizData[currentQuestion].question, correct: quizData[currentQuestion].answer});
+    nextQuestion();
   }
 }
 
-function quizOver() {
-  const quizElement = document.getElementById("quiz");
-  quizElement.innerHTML = `
-    <h2>Quiz Finished!</h2>
-    <p>Your score: ${score}/${quizData.length}</p>
-  `;
+function selectAnswer(selected) {
+  clearInterval(timer);
+  const correct = quizData[currentQuestion].answer;
+  const result = document.getElementById("result");
+  if (selected === correct) {
+    score++;
+    document.getElementById("correctSound").play();
+    result.innerHTML = `<span style="color:green;">Correct!</span>`;
+  } else {
+    document.getElementById("wrongSound").play();
+    result.innerHTML = `<span style="color:red;">Wrong! Correct: ${correct}</span>`;
+  }
+  answerSummary.push({question: quizData[currentQuestion].question, correct: correct});
+  nextQuestion();
 }
 
-loadQuestion();
+function nextQuestion() {
+  setTimeout(() => {
+    currentQuestion++;
+    if (currentQuestion < quizData.length) {
+      loadQuestion();
+    } else {
+      showSummary();
+    }
+  }, 1500);
+}
+
+function showSummary() {
+  document.getElementById("quiz").style.display = "none";
+  const summary = document.getElementById("summary");
+  summary.innerHTML = `<h2>Quiz Finished!</h2><p>Your score: ${score}/${quizData.length}</p><h3>Correct Answers:</h3><ul>` +
+    answerSummary.map(q => `<li><strong>${q.question}</strong><br/>Answer: ${q.correct}</li>`).join('') +
+    `</ul><button onclick="location.reload()">Try Another Quiz</button>`;
+}
 </script>
 
 </body>
