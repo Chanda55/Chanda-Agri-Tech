@@ -13,6 +13,7 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
+      font-size: 16px; /* Base font size */
     }
     .quiz-container {
       background: #fff;
@@ -23,7 +24,7 @@
       max-width: 700px;
     }
     .question {
-      font-size: 24px;
+      font-size: 1.5rem; /* Adjusted font size for better readability */
       margin-bottom: 20px;
     }
     .options button {
@@ -32,7 +33,7 @@
       margin: 8px 0;
       padding: 12px;
       width: 100%;
-      font-size: 18px;
+      font-size: 1rem;
       border-radius: 5px;
       cursor: pointer;
       transition: 0.3s;
@@ -42,11 +43,11 @@
       color: #fff;
     }
     .result {
-      font-size: 20px;
+      font-size: 1.2rem;
       margin-top: 15px;
     }
     #timer {
-      font-size: 18px;
+      font-size: 1rem;
       color: #ff0000;
       font-weight: bold;
       margin-bottom: 15px;
@@ -55,13 +56,13 @@
       text-align: center;
     }
     #categorySelection h2 {
-      font-size: 28px;
+      font-size: 1.75rem;
       margin-bottom: 20px;
     }
     #categorySelection button {
       padding: 10px 20px;
       margin: 10px;
-      font-size: 18px;
+      font-size: 1rem;
       border-radius: 5px;
       cursor: pointer;
       background-color: #007bff;
@@ -73,8 +74,53 @@
       background-color: #0056b3;
     }
     .summary {
-      font-size: 18px;
+      font-size: 1rem;
       margin-top: 20px;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 600px) {
+      body {
+        font-size: 14px; /* Slightly smaller font size for mobile */
+      }
+      .question {
+        font-size: 1.2rem;
+      }
+      .options button {
+        font-size: 0.9rem;
+      }
+      .result {
+        font-size: 1rem;
+      }
+      #timer {
+        font-size: 0.9rem;
+      }
+      #categorySelection h2 {
+        font-size: 1.5rem;
+      }
+      #categorySelection button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+      }
+    }
+
+    /* Larger screen adjustments */
+    @media (min-width: 1200px) {
+      body {
+        font-size: 18px; /* Larger font size for desktop */
+      }
+      .question {
+        font-size: 2rem;
+      }
+      .options button {
+        font-size: 1.2rem;
+      }
+      .result {
+        font-size: 1.5rem;
+      }
+      #timer {
+        font-size: 1.2rem;
+      }
     }
   </style>
 </head>
