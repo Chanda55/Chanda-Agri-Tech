@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture Products</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        .items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .item {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 15px;
+            width: 300px;
+            text-align: center;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .item h3 {
+            margin: 10px 0 5px;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .item p {
+            margin: 0 0 10px;
+            font-size: 1em;
+            color: #666;
+        }
+
+        .item a {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .item a:hover {
+            background-color: #218838;
+        }
+
+        .form-container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        form input, form button {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 1.1em;
+        }
+
+        form button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 600px) {
+            .item {
+                width: 100%;
+            }
+
+            .item h3, .item p, .item a {
+                font-size: 1rem;
+            }
+
+            .form-container {
+                padding: 10px;
+            }
+
+            form input, form button {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Agriculture Products</h1>
+
+    <div class="items">
+        <div class="item">
+            <img src="images/high.jpg" alt="Agriculture Product 1">
+            <h3>Fruit Tree Seedlings</h3>
+            <p>Price: K150</p>
+            <a href="order.html?item=Fruit+Tree+Seedlings&price=150">Make Order</a>
+        </div>
+
+        <div class="item">
+            <img src="images/d compound.jpg" alt="Agriculture Product 2">
+            <h3>Organic Fertilizer</h3>
+            <p>Price: K1000</p>
+            <a href="order.html?item=Organic+Fertilizer&price=200">Make Order</a>
+        </div>
+
+        <div class="item">
+            <img src="images/pumpkins.jpg" alt="Agriculture Product 3">
+            <h3>Pumpkin</h3>
+            <p>Price: 20</p>
+            <a href="order.html?item=Irrigation+Systems&price=1000">Make Order</a>
+        </div>
+
+        <div class="item">
+            <img src="images/fruits.jpg" alt="Agriculture Product 4">
+            <h3>Fruits</h3>
+            <p>Price: K10</p>
+            <a href="order.html?item=Farming+Tools&price=300">Make Order</a>
+        </div>
+
+        <div class="item">
+            <img src="images/f seedlings.jpg" alt="Agriculture Product 5">
+            <h3>High-Yielding Seeds</h3>
+            <p>Price: K50</p>
+            <a href="order.html?item=High-Yielding+Seeds&price=50">Make Order</a>
+        </div>
+
+        <div class="item">
+            <img src="images/sprayer.jpg" alt="Agriculture Product 6">
+            <h3>Sprayers</h3>
+            <p>Price: K500</p>
+            <a href="order.html?item=Sprayers&price=500">Make Order</a>
+        </div>
+
+        <div class="item">
+            <img src="images/wheelbarrow.jpg" alt="Agriculture Product 7">
+            <h3>wheelborrow</h3>
+            <p>Price: K700</p>
+            <a href="order.html?item=Greenhouse+Kits&price=2500">Make Order</a>
+        </div>
+
+        <div class="item">
+            <img src="images/cidepest.jpg" alt="Agriculture Product 8">
+            <h3>Organic Pesticides</h3>
+            <p>Price: K400</p>
+            <a href="order.html?item=Organic+Pesticides&price=400">Make Order</a>
+        </div>
+
+        <div class="item">
+            <img src="images/seedling tray.jpg" alt="Agriculture Product 9">
+            <h3>Seedling Trays</h3>
+            <p>Price: K200</p>
+            <a href="order.html?item=Seedling+Trays&price=200">Make Order</a>
+        </div>
+
+        <div class="item">
+            <img src="images/gardening tools.jpg" alt="Agriculture Product 10">
+            <h3>Garden Tools Set</h3>
+            <p>Price: K300</p>
+            <a href="order.html?item=Garden+Tools+Set&price=600">Make Order</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        &copy; copyright @ 2025 by <span>Chanda Agri-Tech</span> | all rights reserved!
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
