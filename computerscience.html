@@ -10,28 +10,27 @@
             margin: 0;
             padding: 0;
         }
-        
+
         h1 {
             text-align: center;
             margin: 20px;
         }
-        
+
         .items {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
             padding: 20px;
         }
 
         .item {
-            width: 25%;
-            margin: 15px;
             text-align: center;
             border: 1px solid #ddd;
             border-radius: 10px;
             padding: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
+            background-color: white;
         }
 
         .item img {
@@ -71,6 +70,24 @@
             position: fixed;
             bottom: 0;
             width: 100%;
+        }
+
+        @media (max-width: 600px) {
+            .items {
+                padding: 10px;
+            }
+
+            .item {
+                width: 100%;
+            }
+
+            .item h3, .item p {
+                font-size: 14px;
+            }
+
+            .disabled-link {
+                font-size: 14px;
+            }
         }
 
     </style>
@@ -141,12 +158,7 @@
             <p>Price: K900</p>
             <span class="disabled-link">Make Order</span>
         </div>
-
-        
-
-        
-    
-
+    </div>
 
     <footer class="footer">
         &copy; copyright @ 2025 by <span>Chanda Agri-Tech</span> | all rights reserved!
