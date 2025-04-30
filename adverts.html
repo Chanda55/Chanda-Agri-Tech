@@ -64,6 +64,37 @@
       text-decoration: underline;
     }
 
+    form {
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 5px;
+      max-width: 500px;
+      margin: 30px auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form button {
+      background-color: #0066cc;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: #004c99;
+    }
+
     footer {
       text-align: center;
       margin-top: 30px;
@@ -100,7 +131,7 @@
     <div class="ad-content">
       <div class="ad-title">General Agriculture</div>
       <div class="ad-description">
-        🌱 Explore a range of agriculture products! Click below to find the items of your choice.
+        🌱 Click below to check them out and find items of your choice.
       </div>
       <a href="agriculture.html" class="ad-link">Check Them Out</a>
     </div>
@@ -111,7 +142,7 @@
     <div class="ad-content">
       <div class="ad-title">Computer Science</div>
       <div class="ad-description">
-        💻 Discover tech products and services! Click below to find what you're looking for.
+        💻 Click below to check them out and find items of your choice.
       </div>
       <a href="computerscience.html" class="ad-link">Check Them Out</a>
     </div>
@@ -122,17 +153,25 @@
     <div class="ad-content">
       <div class="ad-title">Literature</div>
       <div class="ad-description">
-        📚 Explore a variety of books! Click below to find the perfect read for you.
+        📚 Click below to check them out and find items of your choice.
       </div>
       <a href="literature.html" class="ad-link">Check Them Out</a>
     </div>
   </div>
 
+  <h2 style="text-align: center;">Make an Order</h2>
+  <form action="https://formspree.io/f/xanonqdl" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <input type="text" name="item" placeholder="Item You Want" required />
+    <input type="text" name="price" placeholder="Proposed Price" required />
+    <button type="submit">Submit Order</button>
+  </form>
+
   <footer class="footer">
     &copy; copyright @ 2025 by <span>Chanda Agri-Tech</span> | all rights reserved!
   </footer>
 
-  <!-- custom js file link -->
   <script src="js/script.js"></script>
 </body>
 </html>
