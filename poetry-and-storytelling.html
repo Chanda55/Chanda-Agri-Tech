@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Poetry and Storytelling Course</title>
+
+   <!-- Font Awesome CDN Link -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- Custom CSS File Link -->
+   <link rel="stylesheet" href="css/style.css">
+
+   <!-- Custom Styles -->
+   <style>
+      body {
+         font-family: Arial, sans-serif;
+         margin: 0;
+         padding: 0;
+         background-color: #f3f8fd;
+         color: #333;
+      }
+
+      header {
+         background-color: #2980b9;
+         color: white;
+         padding: 20px;
+         text-align: center;
+      }
+
+      header h1 {
+         font-size: 36px;
+         margin: 0;
+      }
+
+      .course-details {
+         padding: 40px;
+         max-width: 1200px;
+         margin: 0 auto;
+      }
+
+      .heading {
+         font-size: 32px;
+         text-align: center;
+         color: #2980b9;
+         margin-bottom: 30px;
+      }
+
+      .course-features {
+         display: flex;
+         flex-wrap: wrap;
+         gap: 20px;
+         justify-content: center;
+      }
+
+      .feature {
+         background-color: #fff;
+         border-radius: 8px;
+         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+         padding: 20px;
+         width: 100%;
+         max-width: 400px;
+         transition: transform 0.3s ease;
+      }
+
+      .feature:hover {
+         transform: scale(1.05);
+      }
+
+      .feature h2 {
+         font-size: 24px;
+         color: #2980b9;
+         margin-bottom: 15px;
+      }
+
+      .feature p {
+         font-size: 16px;
+         margin-bottom: 10px;
+      }
+
+      .feature ul {
+         list-style-type: none;
+         padding: 0;
+      }
+
+      .feature ul li {
+         margin-bottom: 10px;
+      }
+
+      .feature a {
+         color: #2980b9;
+         text-decoration: none;
+         font-weight: bold;
+         transition: color 0.3s;
+      }
+
+      .feature a:hover {
+         color: #1f5c85;
+      }
+
+      .back-btn {
+         text-align: center;
+         margin-top: 30px;
+      }
+
+      .back-btn a {
+         background-color: #2980b9;
+         color: white;
+         padding: 10px 20px;
+         border-radius: 5px;
+         text-decoration: none;
+         font-weight: bold;
+         transition: background-color 0.3s;
+      }
+
+      .back-btn a:hover {
+         background-color: #1f5c85;
+      }
+
+      footer {
+         background-color: #2980b9;
+         color: white;
+         padding: 20px;
+         text-align: center;
+         position: relative;
+         width: 100%;
+         bottom: 0;
+      }
+
+      footer span {
+         font-weight: bold;
+      }
+
+      .books-list {
+         display: flex;
+         flex-wrap: wrap;
+         gap: 20px;
+         justify-content: center;
+      }
+
+      .book-item {
+         background-color: #f1f1f1;
+         padding: 20px;
+         border-radius: 8px;
+         width: 100%;
+         max-width: 200px;
+         text-align: center;
+         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+         transition: transform 0.3s ease;
+      }
+
+      .book-item:hover {
+         transform: scale(1.05);
+      }
+
+      .book-item a {
+         text-decoration: none;
+         color: #2980b9;
+         font-weight: bold;
+         transition: color 0.3s;
+      }
+
+      .book-item a:hover {
+         color: #1f5c85;
+      }
+
+      @media (max-width: 768px) {
+         header h1 {
+            font-size: 28px;
+         }
+
+         .heading {
+            font-size: 28px;
+         }
+
+         .feature {
+            width: 100%;
+         }
+
+         .book-item {
+            width: 100%;
+         }
+      }
+
+      @media (max-width: 480px) {
+         header h1 {
+            font-size: 24px;
+         }
+
+         .heading {
+            font-size: 24px;
+         }
+
+         .back-btn a {
+            padding: 8px 16px;
+         }
+      }
+   </style>
+</head>
+<body>
+
+<header>
+   <h1>Chanda Agri-Tech</h1>
+   <p>Poetry and Storytelling Course</p>
+</header>
+
+<section class="course-details">
+   <h1 class="heading">Poetry and Storytelling</h1>
+
+   <div class="course-features">
+
+      <!-- Feature 1: Live Class -->
+      <div class="feature">
+         <h2>Live Class</h2>
+         <p>Join live sessions and participate in creative writing workshops and storytelling practices.</p>
+         <ul>
+            <li><a href="https://meet.google.com/poetry-live" target="_blank">Google Meet - Poetry Live</a></li>
+            <li><a href="https://zoom.us/j/poetry123" target="_blank">Zoom - Storytelling Live</a></li>
+         </ul>
+      </div>
+
+      <!-- Feature 2: Recorded Class -->
+      <div class="feature">
+         <h2>Recorded Class</h2>
+         <p>Catch up anytime with recorded poetry and storytelling workshops on our YouTube channel.</p>
+         <a href="https://www.youtube.com/@chandaagritech77" target="_blank">Visit Our YouTube Channel</a>
+      </div>
+
+      <!-- Feature 3: PDF Book Downloads -->
+      <div class="feature">
+         <h2>PDF Book Downloads</h2>
+         <p>Download insightful books and guides to boost your creative writing and storytelling skills.</p>
+
+         <div class="books-list">
+            <div class="book-item"><a href="books/poetry_basics.pdf" download>Basics of Poetry</a></div>
+            <div class="book-item"><a href="books/storytelling_tips.pdf" download>Storytelling Tips</a></div>
+            <div class="book-item"><a href="books/creative_writing.pdf" download>Creative Writing Handbook</a></div>
+            <div class="book-item"><a href="books/performance_poetry.pdf" download>Performance Poetry</a></div>
+            <div class="book-item"><a href="books/poetry_anthology.pdf" download>Poetry Anthology</a></div>
+         </div>
+      </div>
+
+   </div>
+
+   <div class="back-btn">
+      <a href="courses.html" class="inline-btn">Back to Courses</a>
+   </div>
+
+</section>
+
+<footer>
+   &copy; copyright @ 2025 by <span>Chanda Agri-Tech</span> | all rights reserved!
+</footer>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+</body>
+</html>
