@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>General Agriculture Course</title>
+
+   <!-- Font Awesome CDN Link -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- Custom CSS File Link -->
+   <link rel="stylesheet" href="css/style.css">
+
+   <!-- Custom Styles -->
+   <style>
+      body {
+         font-family: Arial, sans-serif;
+         margin: 0;
+         padding: 0;
+         background-color: #f4f4f9;
+         color: #333;
+      }
+
+      header {
+         background-color: #3b4cca;
+         color: white;
+         padding: 20px;
+         text-align: center;
+      }
+
+      header h1 {
+         font-size: 36px;
+         margin: 0;
+      }
+
+      .course-details {
+         padding: 40px;
+         max-width: 1200px;
+         margin: 0 auto;
+      }
+
+      .heading {
+         font-size: 32px;
+         text-align: center;
+         color: #3b4cca;
+         margin-bottom: 30px;
+      }
+
+      .course-features {
+         display: flex;
+         flex-wrap: wrap;
+         gap: 20px;
+         justify-content: center;
+      }
+
+      .feature {
+         background-color: #fff;
+         border-radius: 8px;
+         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+         padding: 20px;
+         width: 100%;
+         max-width: 400px;
+         transition: transform 0.3s ease;
+      }
+
+      .feature:hover {
+         transform: scale(1.05);
+      }
+
+      .feature h2 {
+         font-size: 24px;
+         color: #3b4cca;
+         margin-bottom: 15px;
+      }
+
+      .feature p {
+         font-size: 16px;
+         margin-bottom: 10px;
+      }
+
+      .feature ul {
+         list-style-type: none;
+         padding: 0;
+      }
+
+      .feature ul li {
+         margin-bottom: 10px;
+      }
+
+      .feature a {
+         color: #3b4cca;
+         text-decoration: none;
+         font-weight: bold;
+         transition: color 0.3s;
+      }
+
+      .feature a:hover {
+         color: #1a2e8d;
+      }
+
+      .back-btn {
+         text-align: center;
+         margin-top: 30px;
+      }
+
+      .back-btn a {
+         background-color: #3b4cca;
+         color: white;
+         padding: 10px 20px;
+         border-radius: 5px;
+         text-decoration: none;
+         font-weight: bold;
+         transition: background-color 0.3s;
+      }
+
+      .back-btn a:hover {
+         background-color: #1a2e8d;
+      }
+
+      footer {
+         background-color: #3b4cca;
+         color: white;
+         padding: 20px;
+         text-align: center;
+         position: relative;
+         width: 100%;
+         bottom: 0;
+      }
+
+      footer span {
+         font-weight: bold;
+      }
+
+      .books-list {
+         display: flex;
+         flex-wrap: wrap;
+         gap: 20px;
+         justify-content: center;
+      }
+
+      .book-item {
+         background-color: #f1f1f1;
+         padding: 20px;
+         border-radius: 8px;
+         width: 100%;
+         max-width: 200px;
+         text-align: center;
+         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+         transition: transform 0.3s ease;
+      }
+
+      .book-item:hover {
+         transform: scale(1.05);
+      }
+
+      .book-item a {
+         text-decoration: none;
+         color: #3b4cca;
+         font-weight: bold;
+         transition: color 0.3s;
+      }
+
+      .book-item a:hover {
+         color: #1a2e8d;
+      }
+
+      @media (max-width: 768px) {
+         header h1 {
+            font-size: 28px;
+         }
+
+         .heading {
+            font-size: 28px;
+         }
+
+         .feature {
+            width: 100%;
+         }
+
+         .book-item {
+            width: 100%;
+         }
+      }
+
+      @media (max-width: 480px) {
+         header h1 {
+            font-size: 24px;
+         }
+
+         .heading {
+            font-size: 24px;
+         }
+
+         .back-btn a {
+            padding: 8px 16px;
+         }
+      }
+   </style>
+</head>
+<body>
+
+<header>
+   <h1>Chanda Agri-Tech</h1>
+   <p>General Agriculture Course</p>
+</header>
+
+<section class="course-details">
+   <h1 class="heading">General Agriculture</h1>
+
+   <div class="course-features">
+
+      <!-- Feature 1: Live Class -->
+      <div class="feature">
+         <h2>Live Class</h2>
+         <p>Join our live sessions via Google Meet or Zoom to learn General Agriculture with real-time interaction.</p>
+         <ul>
+            <li><a href="https://meet.google.com/abc123" target="_blank">Google Meet - General Agriculture Live</a></li>
+            <li><a href="https://zoom.us/j/123456789" target="_blank">Zoom - General Agriculture Live</a></li>
+         </ul>
+      </div>
+
+      <!-- Feature 2: Recorded Class -->
+      <div class="feature">
+         <h2>Recorded Class</h2>
+         <p>Access recorded classes on our YouTube channel for General Agriculture. Learn at your own pace.</p>
+         <a href="https://www.youtube.com/@chandaagritech77" target="_blank">Visit Our YouTube Channel</a>
+      </div>
+
+      <!-- Feature 3: PDF Book Downloads -->
+      <div class="feature">
+         <h2>PDF Book Downloads</h2>
+         <p>Download relevant books to enhance your knowledge in General Agriculture.</p>
+
+         <div class="books-list">
+            <div class="book-item"><a href="books/agriculture_intro.pdf" download>A Beginner's Guide to Agriculture</a></div>
+            <div class="book-item"><a href="books/advanced_agriculture.pdf" download>Advanced Agriculture Practices</a></div>
+            <div class="book-item"><a href="books/soil_science_agriculture.pdf" download>Soil Science in Agriculture</a></div>
+            <div class="book-item"><a href="books/agriculture_technology.pdf" download>Agricultural Technologies</a></div>
+            <div class="book-item"><a href="books/crop_management.pdf" download>Crop Management in Agriculture</a></div>
+         </div>
+      </div>
+
+   </div>
+
+   <div class="back-btn">
+      <a href="courses.html" class="inline-btn">Back to Courses</a>
+   </div>
+
+</section>
+
+<footer>
+   &copy; copyright @ 2025 by <span>Chanda Agri-Tech</span> | all rights reserved!
+</footer>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+</body>
+</html>
