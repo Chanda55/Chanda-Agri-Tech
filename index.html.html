@@ -12,6 +12,19 @@
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/style.css">
 
+   <style>
+      .pdf-container {
+         display: none;
+         margin-top: 20px;
+      }
+
+      iframe {
+         width: 100%;
+         height: 500px;
+         margin: 10px 0;
+         border: none;
+      }
+   </style>
 </head>
 <body>
 
@@ -55,7 +68,7 @@
    </div>
 
    <div class="profile">
-      <img src="images/official logo.jpg" class="image" alt="">
+      <img src="images/official logo.jpg" class="image" alt=""/>
       <h3 class="name">Chanda Agri-Tech</h3>
       <p class="role">A Place For Everyone</p>
       <a href="profile.html" class="btn">view profile</a>
@@ -82,25 +95,22 @@
          <div class="flex">
             <a href="add-item-agriculture.html"><i class="fas fa-leaf"></i><span>General Agriculture</span></a>
             <a href="add-item-computer-science.html"><i class="fas fa-laptop-code"></i><span>Computer Science</span></a>
-         <a href="add-item-design.html"><i class="fas fa-paint-brush"></i><span>Literature</span></a>
-         <a href="add-item-data-analysis.html"><i class="fas fa-chart-bar"></i><span>Data Analytics</span></a>
-        <a href="add-item-poetry.html"><i class="fas fa-feather-alt"></i><span>Quiz</span></a>
-       <a href="add-item-software.html"><i class="fas fa-cogs"></i><span>Products and Services</span></a>
-      
+            <a href="add-item-design.html"><i class="fas fa-paint-brush"></i><span>Literature</span></a>
+            <a href="add-item-data-analysis.html"><i class="fas fa-chart-bar"></i><span>Data Analytics</span></a>
+            <a href="add-item-poetry.html"><i class="fas fa-feather-alt"></i><span>Quiz</span></a>
+            <a href="add-item-software.html"><i class="fas fa-cogs"></i><span>Products and Services</span></a>
          </div>
       </div>
 
-      
       <div class="box">
          <h3 class="title">Most Viewed topics</h3>
          <div class="flex">
             <a href="general_agriculture.html"><i class="fas fa-leaf"></i><span>General Agriculture</span></a>
-<a href="general_literature.html"><i class="fas fa-book"></i><span>General Literature</span></a>
-<a href="quiz.html"><i class="fas fa-poll"></i><span>Quiz</span></a>
-<a href="web_designing.html"><i class="fas fa-laptop-code"></i><span>Web Designing</span></a>
-<a href="cartoon_designing.html"><i class="fas fa-paint-brush"></i><span>Cartoon Designing</span></a>
-<a href="graphic_designing.html"><i class="fas fa-palette"></i><span>Graphic Designing</span></a>
-
+            <a href="general_literature.html"><i class="fas fa-book"></i><span>General Literature</span></a>
+            <a href="quiz.html"><i class="fas fa-poll"></i><span>Quiz</span></a>
+            <a href="web_designing.html"><i class="fas fa-laptop-code"></i><span>Web Designing</span></a>
+            <a href="cartoon_designing.html"><i class="fas fa-paint-brush"></i><span>Cartoon Designing</span></a>
+            <a href="graphic_designing.html"><i class="fas fa-palette"></i><span>Graphic Designing</span></a>
          </div>
       </div>
 
@@ -114,8 +124,6 @@
    </div>
 
 </section>
-
-
 
 <section class="courses">
 
@@ -134,7 +142,6 @@
          </div>
          <h3 class="title">General Literature</h3>
          <a href="general-literature.html" class="inline-btn">open class</a>
-
       </div>
 
       <div class="box">
@@ -201,7 +208,6 @@
          </div>
          <h3 class="title">Data Analytics</h3>
          <a href="data-analytics.html" class="inline-btn">open class</a>
-         
       </div>
 
       <div class="box">
@@ -215,7 +221,6 @@
          </div>
          <h3 class="title">Graphic Designing</h3>
          <a href="graphic-designing.html" class="inline-btn">open class</a>
-         
       </div>
 
       <div class="box">
@@ -234,124 +239,52 @@
       <div class="box">
          <div class="tutor">
             <img src="images/g agric.png" alt="">
-            <div class="info">>
+            <div class="info">
             </div>
          </div>
          <div class="thumb">
             <img src="images/g agric.png" alt="">
          </div>
          <h3 class="title">General Agriculture</h3>
-         <a href="general-agriculture.html" class="inline-btn">open class</a>
+         <a href="" class="inline-btn">open class</a>
       </div>
 
+   <div class="more-btn">
+      <a href="courses.html" class="inline-option-btn">view all courses</a>
+   </div>
 
-   
 </section>
 
-</div>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embed Multiple PDFs with Toggle</title>
-    <style>
-        .pdf-container {
-            display: none; /* Initially hide the PDFs */
-            margin-top: 20px;
-        }
-        iframe {
-            width: 100%;
-            height: 600px;
-            border: none;
-        }
-    </style>
-    <script>
-        function toggleVisibility() {
-            var pdfContainer = document.getElementById('pdf-container');
-            if (pdfContainer.style.display === 'none') {
-                pdfContainer.style.display = 'block';
-            } else {
-                pdfContainer.style.display = 'none';
-            }
-        }
-    </script>
-</head>
-<body>
-    <h1>GENERAL BOOKS LIBRARY</h1>
-    <a href="javascript:void(0);" onclick="toggleVisibility()">Open library</a>
-    
-    <div id="pdf-container" class="pdf-container">
-
-        <h2>Books of Success</h2>
-        <iframe src="books/Rich-Dad-Poor-Dad.pdf">
-            This browser does not support PDFs. Please download the PDF to view it: <a href="books/Rich-Dad-Poor-Dad.pdf">Download Book 2</a>.
-        </iframe>
-        <iframe src="books/Richest man in Babylon pdf.pdf">
-         This browser does not support PDFs. Please download the PDF to view it: <a href="books/Richest man in Babylon pdf.pdf">Download Book 2</a>.
-     </iframe>
-     <iframe src="books/The art of War pdf.pdf">
-      This browser does not support PDFs. Please download the PDF to view it: <a href="books/The art of War pdf.pdf">Download Book 2</a>.
-  </iframe>
-  <iframe src="books/Think-and-Grow-Rich-PDF.pdf">
-   This browser does not support PDFs. Please download the PDF to view it: <a href="books/Think-and-Grow-Rich-PDF.pdf">Download Book 2</a>.
-</iframe>
-
-        <h2>Christian Books</h2>
-        <iframe src="books/The Story Of Redemption pdf.pdf">
-            This browser does not support PDFs. Please download the PDF to view it: <a href="books/The Story Of Redemption pdf.pdf">Download Book 3</a>.
-        </iframe>
-        <iframe src="books/Patrarchs and Prophets pdf.pdf">
-         This browser does not support PDFs. Please download the PDF to view it: <a href="books/Patrarchs and Prophets pdf.pdf">Download Book 2</a>.
-         <iframe src="books/Prophets and Kings pdf.pdf"></iframe>
-            This browser does not support PDFs. Please download the PDF to view it: <a href="books/Prophets and Kings pdf.pdf">Download Book 2</a>.
-        </iframe>
-        <iframe src="books/Last Day Events pdf.pdf">
-            This browser does not support PDFs. Please download the PDF to view it: <a href="books/Last Day Events pdf.pdf">Download Book 2</a>.
-        </iframe>
-        <iframe src="books/Desire of Ages pdf.pdf">
-            This browser does not support PDFs. Please download the PDF to view it: <a href="books/Desire of Ages pdf.pdf">Download Book 2</a>.
-        </iframe>
-        <iframe src="books/The Acts of the Apostles pdf.pdf">
-            This browser does not support PDFs. Please download the PDF to view it: <a href="books/The Acts of the Apostles pdf.pdf">Download Book 2</a>.
-        </iframe>
-        <iframe src="books/Adventist Home pdf.pdf">
-            This browser does not support PDFs. Please download the PDF to view it: <a href="books/Adventist Home pdf.pdf">Download Book 2</a>.
-        </iframe>
-        <iframe src="books/Great Contraversy-Pdf.pdf">
-            This browser does not support PDFs. Please download the PDF to view it: <a href="books/Great Contraversy-Pdf.pdf">Download Book 2</a>.
-        </iframe>
-        
-        <h2>Books of Poetry</h2>
-        <iframe src="books/shakespeares-works_PDF_FolgerShakespeare.zip">
-            This browser does not support PDFs. Please download the PDF to view it: <a href="books/Rich-Dad-Poor-Dad.pdf">Download Book 2</a>.
-        </iframe>
-     </iframe>
-    </div>
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<footer class="footer">
-
-   &copy; copyright @ 2025 by <span>Chanda Agri-Tech</span> | all rights reserved!
-
-</footer>
-
-<!-- custom js file link  -->
-<script src="js/script.js"></script>
-
+<!-- Books Library Section -->
+<section>
+   <a href="javascript:void(0);" onclick="toggleVisibility()" style="display: inline-block; text-align: center; margin: 20px auto; padding: 10px 20px; background-color: #4CAF50; color: white; font-size: 1.1rem; font-weight: bold; border-radius: 5px; text-decoration: none; transition: background-color 0.3s;">
+      Open Library
+   </a>
    
+   <div id="pdf-container" class="pdf-container">
+      <h2>Books of Success</h2>
+      <iframe src="books/Rich-Dad-Poor-Dad.pdf"></iframe>
+      <iframe src="books/Richest man in Babylon pdf.pdf"></iframe>
+      <iframe src="books/The art of War pdf.pdf"></iframe>
+      <iframe src="books/Think-and-Grow-Rich-PDF.pdf"></iframe>
+
+      <h2>Christian Books</h2>
+      <iframe src="books/The Story Of Redemption pdf.pdf"></iframe>
+      <iframe src="books/Patrarchs and Prophets pdf.pdf"></iframe>
+      <iframe src="books/Prophets and Kings pdf.pdf"></iframe>
+      <iframe src="books/Last Day Events pdf.pdf"></iframe>
+      <iframe src="books/Desire of Ages pdf.pdf"></iframe>
+      <iframe src="books/The Acts of the Apostles pdf.pdf"></iframe>
+      <iframe src="books/Adventist Home pdf.pdf"></iframe>
+   </div>
+</section>
+
+<script>
+   function toggleVisibility() {
+      var container = document.getElementById('pdf-container');
+      container.style.display = (container.style.display === 'none') ? 'block' : 'none';
+   }
+</script>
+
 </body>
 </html>
