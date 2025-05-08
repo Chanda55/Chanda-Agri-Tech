@@ -4,21 +4,18 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>register</title>
+   <title>Register</title>
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
 
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/style.css">
-
 </head>
 <body>
 
 <header class="header">
-   
    <section class="flex">
-
       <a href="home.html" class="logo"><E-PLATFORM></E-PLATFORM></a>
 
       <form action="search.html" method="post" class="search-form">
@@ -43,13 +40,10 @@
             <a href="register.html" class="option-btn">register</a>
          </div>
       </div>
-
    </section>
-
 </header>   
 
 <div class="side-bar">
-
    <div id="close-btn">
       <i class="fas fa-times"></i>
    </div>
@@ -68,12 +62,10 @@
       <a href="contact.html"><i class="fas fa-headset"></i><span>contact us</span></a>
       <a href="contact.html"><i class="fas fa-brain"></i><span>Quiz</span></a>
    </nav>
-
 </div>
 
 <section class="form-container">
-
-   <form action="" method="post" enctype="multipart/form-data">
+   <form id="register-form">
       <h3>register now</h3>
       <p>your name <span>*</span></p>
       <input type="text" name="name" placeholder="enter your name" required maxlength="50" class="box">
@@ -83,34 +75,72 @@
       <input type="password" name="pass" placeholder="enter your password" required maxlength="20" class="box">
       <p>confirm password <span>*</span></p>
       <input type="password" name="c_pass" placeholder="confirm your password" required maxlength="20" class="box">
-      <p>select profile <span>*</span></p>
-      <input type="file" accept="image/*" required class="box">
-      <input type="submit" value="register new" name="submit" class="btn">
+      <input type="submit" value="register new" class="btn">
    </form>
-
 </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
 <footer class="footer">
-
    &copy; copyright @ 2025 by <span>Chanda Agri-Tech</span> | all rights reserved!
-
 </footer>
+
+<!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"></script>
+
+<!-- Firebase Config -->
+<script>
+   const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_PROJECT_ID.appspot.com",
+      messagingSenderId: "YOUR_SENDER_ID",
+      appId: "YOUR_APP_ID",
+      databaseURL: "https://YOUR_PROJECT_ID.firebaseio.com"
+   };
+
+   firebase.initializeApp(firebaseConfig);
+   const auth = firebase.auth();
+   const database = firebase.database();
+</script>
+
+<!-- Register Script -->
+<script>
+document.getElementById('register-form').addEventListener('submit', async function(e) {
+   e.preventDefault();
+
+   const name = e.target.name.value.trim();
+   const email = e.target.email.value.trim();
+   const password = e.target.pass.value;
+   const confirmPassword = e.target.c_pass.value;
+
+   if (password !== confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+   }
+
+   try {
+      const userCredential = await auth.createUserWithEmailAndPassword(email, password);
+      const user = userCredential.user;
+
+      await database.ref('users/' + user.uid).set({
+         name: name,
+         email: email,
+         registeredAt: new Date().toISOString()
+      });
+
+      alert("Registration successful!");
+      window.location.href = "login.html";
+   } catch (error) {
+      alert(error.message);
+      console.error(error);
+   }
+});
+</script>
 
 <!-- custom js file link  -->
 <script src="js/script.js"></script>
 
-   
 </body>
 </html>

@@ -11,14 +11,11 @@
 
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/style.css">
-
 </head>
 <body>
 
 <header class="header">
-   
    <section class="flex">
-
       <a href="home.html" class="logo"><E-PLATFORM></E-PLATFORM></a>
 
       <form action="search.html" method="post" class="search-form">
@@ -43,13 +40,10 @@
             <a href="register.html" class="option-btn">register</a>
          </div>
       </div>
-
    </section>
-
 </header>   
 
 <div class="side-bar">
-
    <div id="close-btn">
       <i class="fas fa-times"></i>
    </div>
@@ -68,45 +62,59 @@
       <a href="contact.html"><i class="fas fa-headset"></i><span>contact us</span></a>
       <a href="contact.html"><i class="fas fa-brain"></i><span>Quiz</span></a>
    </nav>
-
 </div>
 
 <section class="form-container">
-
-   <form action="" method="post" enctype="multipart/form-data">
+   <form id="login-form">
       <h3>login now</h3>
       <p>your email <span>*</span></p>
       <input type="email" name="email" placeholder="enter your email" required maxlength="50" class="box">
       <p>your password <span>*</span></p>
       <input type="password" name="pass" placeholder="enter your password" required maxlength="20" class="box">
-      <input type="submit" value="login new" name="submit" class="btn">
+      <input type="submit" value="login" class="btn">
    </form>
-
 </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <footer class="footer">
-
    &copy; copyright @ 2025 by <span>Chanda Agric-Tech</span> | all rights reserved!
-
 </footer>
+
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js"></script>
+
+<script>
+   const firebaseConfig = {
+      apiKey: "AIzaSyA41BzVXCMK39yYJ9UGs7JQGq_YDT3TFO8",
+      authDomain: "chanda-agri-tech.firebaseapp.com",
+      projectId: "chanda-agri-tech",
+      storageBucket: "chanda-agri-tech.appspot.com",
+      messagingSenderId: "827850154882",
+      appId: "1:827850154882:web:17b1eef1faf14ad48f259b",
+      measurementId: "G-Z2H5X23N4V"
+   };
+
+   firebase.initializeApp(firebaseConfig);
+   const auth = firebase.auth();
+
+   // Login logic
+   document.getElementById("login-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const email = e.target.email.value;
+      const password = e.target.pass.value;
+
+      auth.signInWithEmailAndPassword(email, password)
+         .then((userCredential) => {
+            alert("Login successful!");
+            window.location.href = "profile.html"; // or dashboard
+         })
+         .catch((error) => {
+            alert("Login failed: " + error.message);
+         });
+   });
+</script>
 
 <!-- custom js file link  -->
 <script src="js/script.js"></script>
-
-   
 </body>
 </html>
