@@ -2,9 +2,9 @@
 
 :root{
    --main-color:#250fec;
-   --red:#e74c3c;
+   --red:#e7220c;
    --orange:#f39c12;
-   --light-color:#888;
+   --light-color:#aa9595;
    --light-bg:#eee;
    --black:#2c3e50;
    --white:#fff;
@@ -1481,4 +1481,32 @@ h1 {
 @keyframes slide {
    0% { background-position: 0% 50%; }
    100% { background-position: 100% 50%; }
+}
+/* style.css - placeholder stylesheet */
+
+body {
+   background-color: #f4f4f9;
+   font-family: Arial, sans-serif;
+}
+
+a {
+   color: #3b4cca;
+   text-decoration: none;
+}
+
+a:hover {
+   color: #1a2e8d;
+}
+
+.inline-btn {
+   background-color: #3b4cca;
+   color: white;
+   padding: 10px 20px;
+   border-radius: 5px;
+   font-weight: bold;
+   transition: background-color 0.3s;
+}
+
+.inline-btn:hover {
+   background-color: #1a2e8d;
 }
